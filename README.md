@@ -7,3 +7,5 @@ applying react on my portfolio
 - git add
 - git commit
 - git diff
+## Learning Progress
+  Currently learning Git and GitHub>
