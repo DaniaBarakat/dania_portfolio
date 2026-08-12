@@ -1,19 +1,23 @@
-import { Avatar, Typography, Box, IconButton, Button } from '@mui/material';
-import profileImage from '../assets/profileImage.jpg';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
 
-export default function Sidebar() {
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
+import profileImage from "../assets/profile.jpg";
+
+function Sidebar() {
   return (
     <Box
       sx={{
         width: 280,
-        minHeight: '100vh',
+        minHeight: "100vh",
         padding: 3,
-        boxSizing: 'border-box',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        boxSizing: "border-box",
+        borderRight: "1px solid #e0e0e0",
       }}
     >
       <Avatar
@@ -22,39 +26,75 @@ export default function Sidebar() {
         sx={{
           width: 120,
           height: 120,
-          marginBottom: 2,
+          margin: "0 auto 20px",
         }}
       />
 
-      <Typography variant="h5" component="h2" sx={{ textAlign: 'center', fontWeight: 700 }}>
+      <Typography
+        variant="h5"
+        sx={{
+          textAlign: "center",
+          fontWeight: 700,
+        }}
+      >
         Dania Barakat
       </Typography>
 
-      <Typography variant="body2" component="p" sx={{ textAlign: 'center', mt: 1 }}>
+      <Typography
+        variant="body2"
+        sx={{
+          textAlign: "center",
+          mt: 1,
+          color: "text.secondary",
+        }}
+      >
         Front-End Developer
       </Typography>
 
-      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, mt: 3 }}>
-        <IconButton aria-label="github">
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          gap: 1,
+          mt: 3,
+        }}
+      >
+        <IconButton>
           <GitHubIcon />
         </IconButton>
 
-        <IconButton aria-label="linkedin">
+        <IconButton>
           <LinkedInIcon />
         </IconButton>
       </Box>
 
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, mt: 4, width: '100%' }}>
-        <Button fullWidth>Home</Button>
-        <Button fullWidth>About</Button>
-        <Button fullWidth>Skills</Button>
-        <Button fullWidth>Projects</Button>
-        <Button fullWidth>Contact</Button>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 1,
+          mt: 5,
+        }}
+      >
+        <Button>Home</Button>
+        <Button>About</Button>
+        <Button>Skills</Button>
+        <Button>What I Do</Button>
+        <Button>Projects</Button>
+        <Button>Contact</Button>
       </Box>
 
-      <Button variant="contained" fullWidth sx={{ mt: 4 }}>
+      <Button
+        variant="contained"
+        fullWidth
+        sx={{
+          mt: 5,
+        }}
+      >
         Download CV
       </Button>
     </Box>
   );
 }
+
+export default Sidebar;
