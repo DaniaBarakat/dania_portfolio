@@ -17,18 +17,35 @@ function Hero() {
         },
         alignItems: "center",
         justifyContent: "space-between",
-        minHeight: "100vh",
+        minHeight: {
+          xs: "auto",
+          md: "100vh",
+        },
         padding: {
           xs: 3,
           md: 6,
         },
         gap: 4,
+        overflow: "hidden",
       }}
     >
+      {/* Hero Text */}
       <Box
         sx={{
           flex: 1,
           width: "100%",
+          animation: "heroTextEnter 800ms ease forwards",
+
+          "@keyframes heroTextEnter": {
+            from: {
+              opacity: 0,
+              transform: "translateX(-40px)",
+            },
+            to: {
+              opacity: 1,
+              transform: "translateX(0)",
+            },
+          },
         }}
       >
         <Typography variant="h6">
@@ -84,23 +101,45 @@ function Hero() {
               xs: "100%",
               sm: "auto",
             },
+
+            transition:
+              "transform 200ms ease, box-shadow 200ms ease",
+
+            "&:hover": {
+              transform: "translateY(-2px)",
+              boxShadow: 4,
+            },
           }}
         >
           View My Work
         </Button>
       </Box>
 
+      {/* Hero Image */}
       <Box
         sx={{
           flex: 1,
           width: "100%",
           textAlign: "center",
+          animation: "heroImageEnter 900ms ease 150ms forwards",
+          opacity: 0,
+
+          "@keyframes heroImageEnter": {
+            from: {
+              opacity: 0,
+              transform: "translateX(40px) scale(0.96)",
+            },
+            to: {
+              opacity: 1,
+              transform: "translateX(0) scale(1)",
+            },
+          },
         }}
       >
         <Box
           component="img"
           src={profileImage}
-          alt="Hero"
+          alt="Dania Barakat"
           sx={{
             width: "100%",
             maxWidth: {

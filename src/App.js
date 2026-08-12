@@ -13,6 +13,7 @@ import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Reveal from "./components/Reveal";
 
 function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -49,13 +50,34 @@ function App() {
 
         <Box component="main">
           <Hero />
-          <About />
-          <Skills />
-          <WhatIDo />
-          <Projects />
-          <Education />
-          <Contact />
-          <Footer />
+
+          <Reveal>
+            <About />
+          </Reveal>
+
+          <Reveal delay={50}>
+            <Skills />
+          </Reveal>
+
+          <Reveal delay={100}>
+            <WhatIDo />
+          </Reveal>
+
+          <Reveal delay={100}>
+            <Projects />
+          </Reveal>
+
+          <Reveal delay={100}>
+            <Education />
+          </Reveal>
+
+          <Reveal delay={100}>
+            <Contact />
+          </Reveal>
+
+          <Reveal>
+            <Footer />
+          </Reveal>
         </Box>
       </Box>
     </Box>

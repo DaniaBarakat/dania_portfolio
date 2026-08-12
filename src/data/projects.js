@@ -3,30 +3,26 @@ const projects = [
     title: "Todo App",
     description:
       "A simple task management application built with React.",
-    image: "/projects/todo.png",
+    image: "Screenshot.png",
     technologies: ["React", "JavaScript", "CSS"],
-    github: "https://github.com/yourusername/todo-app",
-    demo: "https://example.com",
   },
 
   {
-    title: "Weather App",
+    title: "pet adoption",
     description:
-      "A weather application that displays weather information using an API.",
-    image: "/projects/weather.png",
-    technologies: ["React", "API", "CSS"],
-    github: "https://github.com/yourusername/weather-app",
-    demo: "https://example.com",
+      "Aims to address the challenge of finding suitable homes for shelter animals by intelligently matching pets with potential adopters based on multiple compatibility criteria.",
+    image: "/image.png",
+    technologies: ["js", "Html", "CSS", "xml"],
+    
   },
 
   {
-    title: "Portfolio",
+    title: "food-surplus",
     description:
-      "My personal portfolio built using React and Material UI.",
-    image: "/projects/portfolio.png",
-    technologies: ["React", "MUI", "JavaScript"],
-    github: "https://github.com/yourusername/portfolio-react",
-    demo: "https://example.com",
+      "A web API for sharing surplus food between students and providers on campus.",
+    image: "/image11.png",
+    technologies: [ "mongodb", "Node.js"],
+    
   },
 ];
 
