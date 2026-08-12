@@ -14,9 +14,13 @@ function ProjectCard({ project }) {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        transition: "transform 0.2s ease",
+
+        transition:
+          "transform 250ms ease, box-shadow 250ms ease",
+
         "&:hover": {
           transform: "translateY(-6px)",
+          boxShadow: 6,
         },
       }}
     >
@@ -63,6 +67,14 @@ function ProjectCard({ project }) {
           size="small"
           href={project.github}
           target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            transition: "transform 200ms ease",
+
+            "&:hover": {
+              transform: "translateY(-2px)",
+            },
+          }}
         >
           GitHub
         </Button>
@@ -71,6 +83,14 @@ function ProjectCard({ project }) {
           size="small"
           href={project.demo}
           target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            transition: "transform 200ms ease",
+
+            "&:hover": {
+              transform: "translateY(-2px)",
+            },
+          }}
         >
           Live Demo
         </Button>
