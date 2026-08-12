@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-import heroImage from "../assets/hero.png";
+import profileImage from "../assets/profileImage.jpg";
 
 function Hero() {
   return (
@@ -71,7 +71,7 @@ function Hero() {
       >
         <Box
           component="img"
-          src={heroImage}
+          src={profileImage}
           alt="Hero"
           sx={{
             width: "100%",
