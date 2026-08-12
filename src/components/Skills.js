@@ -1,27 +1,45 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import LinearProgress from "@mui/material/LinearProgress";
+import Chip from "@mui/material/Chip";
 
-const skills = [
+const skillGroups = [
   {
-    name: "HTML",
-    level: 90,
+    title: "Frontend Development",
+    skills: [
+      {
+        name: "HTML",
+        level: "Proficient",
+      },
+      {
+        name: "CSS",
+        level: "Proficient",
+      },
+      {
+        name: "JavaScript",
+        level: "Intermediate",
+      },
+      {
+        name: "React",
+        level: "Intermediate",
+      },
+    ],
   },
   {
-    name: "CSS",
-    level: 85,
-  },
-  {
-    name: "JavaScript",
-    level: 80,
-  },
-  {
-    name: "React",
-    level: 75,
-  },
-  {
-    name: "Git & GitHub",
-    level: 70,
+    title: "Tools & Technologies",
+    skills: [
+      {
+        name: "Git & GitHub",
+        level: "Intermediate",
+      },
+      {
+        name: "Material UI",
+        level: "Intermediate",
+      },
+      {
+        name: "Jira",
+        level: "Intermediate",
+      },
+    ],
   },
 ];
 
@@ -48,27 +66,58 @@ function Skills() {
           maxWidth: 800,
         }}
       >
-        {skills.map((skill) => (
+        {skillGroups.map((group) => (
           <Box
-            key={skill.name}
+            key={group.title}
             sx={{
-              mb: 3,
+              mb: 5,
             }}
           >
             <Typography
-              variant="body1"
+              variant="h5"
               fontWeight={600}
               sx={{
-                mb: 1,
+                mb: 2,
               }}
             >
-              {skill.name}
+              {group.title}
             </Typography>
 
-            <LinearProgress
-              variant="determinate"
-              value={skill.level}
-            />
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+              }}
+            >
+              {group.skills.map((skill) => (
+                <Box
+                  key={skill.name}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: 2,
+                    p: 2,
+                    border: "1px solid",
+                    borderColor: "divider",
+                    borderRadius: 2,
+                  }}
+                >
+                  <Typography
+                    variant="body1"
+                    fontWeight={600}
+                  >
+                    {skill.name}
+                  </Typography>
+
+                  <Chip
+                    label={skill.level}
+                    size="small"
+                  />
+                </Box>
+              ))}
+            </Box>
           </Box>
         ))}
       </Box>
