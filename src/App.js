@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 import Box from "@mui/material/Box";
+import { ThemeProvider } from "@mui/material/styles";
+
+import theme from "./theme";
 
 import Sidebar from "./components/Sidebar";
 import MobileHeader from "./components/MobileHeader";
@@ -27,60 +30,70 @@ function App() {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        minHeight: "100vh",
-      }}
-    >
-      <Sidebar
-        mobileOpen={mobileOpen}
-        onClose={handleMobileMenuClose}
-      />
-
+    <ThemeProvider theme={theme}>
       <Box
         sx={{
-          flex: 1,
-          minWidth: 0,
+          minHeight: "100vh",
+          backgroundColor: "background.default",
+          color: "text.primary",
         }}
       >
-        <MobileHeader
-          onMenuClick={handleMobileMenuOpen}
-        />
+        <Box
+          sx={{
+            display: "flex",
+            minHeight: "100vh",
+          }}
+        >
+          <Sidebar
+            mobileOpen={mobileOpen}
+            onClose={handleMobileMenuClose}
+          />
 
-        <Box component="main">
-          <Hero />
+          <Box
+            sx={{
+              flex: 1,
+              minWidth: 0,
+            }}
+          >
+            <MobileHeader
+              onMenuClick={handleMobileMenuOpen}
+            />
 
-          <Reveal>
-            <About />
-          </Reveal>
+            <Box component="main">
+              <Hero />
 
-          <Reveal delay={50}>
-            <Skills />
-          </Reveal>
+              <Reveal>
+                <About />
+              </Reveal>
 
-          <Reveal delay={100}>
-            <WhatIDo />
-          </Reveal>
+              <Reveal delay={50}>
+                <Skills />
+              </Reveal>
 
-          <Reveal delay={100}>
-            <Projects />
-          </Reveal>
+              <Reveal delay={100}>
+                <WhatIDo />
+              </Reveal>
 
-          <Reveal delay={100}>
-            <Education />
-          </Reveal>
+              <Reveal delay={100}>
+                <Projects />
+              </Reveal>
 
-          <Reveal delay={100}>
-            <Contact />
-          </Reveal>
+              <Reveal delay={100}>
+                <Education />
+              </Reveal>
 
-          <Reveal>
-            <Footer />
-          </Reveal>
+              <Reveal delay={100}>
+                <Contact />
+              </Reveal>
+
+              <Reveal>
+                <Footer />
+              </Reveal>
+            </Box>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </ThemeProvider>
   );
 }
 
