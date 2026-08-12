@@ -38,9 +38,11 @@ function App() {
         }}
       >
         <Sidebar
-  isDarkMode={isDarkMode}
-  onToggleTheme={() => setIsDarkMode((prev) => !prev)}
-/>
+          isDarkMode={isDarkMode}
+          onToggleTheme={() =>
+            setIsDarkMode((prev) => !prev)
+          }
+        />
 
         <Box
           component="main"

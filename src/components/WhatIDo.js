@@ -48,10 +48,17 @@ function WhatIDo() {
       <Grid container spacing={3}>
         {services.map((service) => (
           <Grid
+            item
             key={service.title}
-            size={{ xs: 12, sm: 6, md: 3 }}
+            xs={12}
+            sm={6}
+            md={3}
           >
-            <Card sx={{ height: "100%" }}>
+            <Card
+              sx={{
+                height: "100%",
+              }}
+            >
               <CardContent>
                 <Typography
                   variant="h6"
