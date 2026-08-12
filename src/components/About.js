@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-export default function About() {
+function About() {
   return (
     <Box
       component="section"
@@ -26,11 +26,13 @@ export default function About() {
           lineHeight: 1.8,
         }}
       >
-        I'm a Computer Science student interested in
-        Front-End Development and modern web technologies.
-        I enjoy building interactive and responsive web
-        interfaces using React.
+        I'm a Computer Science student passionate about Front-End
+        Development and creating modern web applications using React.
+        I enjoy solving problems, learning new technologies, and building
+        responsive user interfaces that provide a great user experience.
       </Typography>
     </Box>
   );
 }
+
+export default About;

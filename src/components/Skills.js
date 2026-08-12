@@ -49,11 +49,18 @@ function Skills() {
         }}
       >
         {skills.map((skill) => (
-          <Box key={skill.name} sx={{ mb: 3 }}>
+          <Box
+            key={skill.name}
+            sx={{
+              mb: 3,
+            }}
+          >
             <Typography
               variant="body1"
               fontWeight={600}
-              sx={{ mb: 1 }}
+              sx={{
+                mb: 1,
+              }}
             >
               {skill.name}
             </Typography>

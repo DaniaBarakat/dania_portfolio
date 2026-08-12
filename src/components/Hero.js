@@ -1,11 +1,14 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+
 import profileImage from "../assets/profileImage.jpg";
 
-export default function Hero() {
+function Hero() {
   return (
     <Box
+      component="section"
+      id="home"
       sx={{
         display: "flex",
         alignItems: "center",
@@ -15,19 +18,28 @@ export default function Hero() {
         gap: 4,
       }}
     >
-      <Box sx={{ flex: 1 }}>
+      <Box
+        sx={{
+          flex: 1,
+        }}
+      >
         <Typography variant="h6">
           Hi, I'm
         </Typography>
 
-        <Typography variant="h2" fontWeight={700}>
-          Dania
+        <Typography
+          variant="h2"
+          fontWeight={700}
+        >
+          Dania Barakat
         </Typography>
 
         <Typography
           variant="h4"
           color="primary"
-          sx={{ mb: 3 }}
+          sx={{
+            mb: 3,
+          }}
         >
           Front-End Developer
         </Typography>
@@ -40,7 +52,7 @@ export default function Hero() {
           }}
         >
           I build responsive and interactive web interfaces
-          using modern web technologies.
+          using React, JavaScript, and Material UI.
         </Typography>
 
         <Button
@@ -51,11 +63,16 @@ export default function Hero() {
         </Button>
       </Box>
 
-      <Box sx={{ flex: 1, textAlign: "center" }}>
+      <Box
+        sx={{
+          flex: 1,
+          textAlign: "center",
+        }}
+      >
         <Box
           component="img"
           src={profileImage}
-          alt="Dania"
+          alt="Hero"
           sx={{
             width: "100%",
             maxWidth: 420,
@@ -65,3 +82,5 @@ export default function Hero() {
     </Box>
   );
 }
+
+export default Hero;
