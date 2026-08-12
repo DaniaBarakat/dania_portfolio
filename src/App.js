@@ -6,6 +6,9 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import WhatIDo from "./components/WhatIDo";
 import Projects from "./components/Projects";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
         <Skills />
         <WhatIDo />
         <Projects />
+        <Education />
+        <Contact />
+        <Footer />
       </Box>
     </Box>
   );
