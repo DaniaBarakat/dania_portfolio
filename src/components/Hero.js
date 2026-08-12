@@ -56,11 +56,12 @@ function Hero() {
         </Typography>
 
         <Button
-          variant="contained"
-          size="large"
-        >
-          View My Work
-        </Button>
+  variant="contained"
+  size="large"
+  href="#projects"
+>
+  View My Work
+</Button>
       </Box>
 
       <Box
