@@ -9,7 +9,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import profileImage from "../assets/profileImage.jpg";
 
-function Sidebar() {
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+function Sidebar({isDarkMode, onToggleTheme,}) {
   return (
     <Box
       sx={{
@@ -59,6 +61,16 @@ function Sidebar() {
           mt: 3,
         }}
       >
+        <IconButton
+  onClick={onToggleTheme}
+  aria-label="Toggle dark mode"
+>
+  {isDarkMode ? (
+    <LightModeIcon />
+  ) : (
+    <DarkModeIcon />
+  )}
+</IconButton>
         <IconButton>
           <GitHubIcon />
         </IconButton>
