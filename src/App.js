@@ -1,6 +1,10 @@
+import { useState } from "react";
+
 import Box from "@mui/material/Box";
 
 import Sidebar from "./components/Sidebar";
+import MobileHeader from "./components/MobileHeader";
+
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -11,6 +15,16 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleMobileMenuOpen = () => {
+    setMobileOpen(true);
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileOpen(false);
+  };
+
   return (
     <Box
       sx={{
@@ -18,22 +32,31 @@ function App() {
         minHeight: "100vh",
       }}
     >
-      <Sidebar />
+      <Sidebar
+        mobileOpen={mobileOpen}
+        onClose={handleMobileMenuClose}
+      />
 
       <Box
-        component="main"
         sx={{
           flex: 1,
+          minWidth: 0,
         }}
       >
-        <Hero />
-        <About />
-        <Skills />
-        <WhatIDo />
-        <Projects />
-        <Education />
-        <Contact />
-        <Footer />
+        <MobileHeader
+          onMenuClick={handleMobileMenuOpen}
+        />
+
+        <Box component="main">
+          <Hero />
+          <About />
+          <Skills />
+          <WhatIDo />
+          <Projects />
+          <Education />
+          <Contact />
+          <Footer />
+        </Box>
       </Box>
     </Box>
   );
